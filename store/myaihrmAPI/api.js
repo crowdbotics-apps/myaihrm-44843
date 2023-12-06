@@ -12,6 +12,24 @@ function api_v1_login_create(payload) {
 function api_v1_signup_create(payload) {
   return myaihrmAPI.post(`/api/v1/signup/`, payload)
 }
+function api_v1_user_list(payload) {
+  return myaihrmAPI.get(`/api/v1/user/`)
+}
+function api_v1_user_create(payload) {
+  return myaihrmAPI.post(`/api/v1/user/`, payload)
+}
+function api_v1_user_retrieve(payload) {
+  return myaihrmAPI.get(`/api/v1/user/${payload.id}/`)
+}
+function api_v1_user_update(payload) {
+  return myaihrmAPI.put(`/api/v1/user/${payload.id}/`, payload)
+}
+function api_v1_user_partial_update(payload) {
+  return myaihrmAPI.patch(`/api/v1/user/${payload.id}/`, payload)
+}
+function api_v1_user_destroy(payload) {
+  return myaihrmAPI.delete(`/api/v1/user/${payload.id}/`)
+}
 function rest_auth_login_create(payload) {
   return myaihrmAPI.post(`/rest-auth/login/`, payload)
 }
@@ -49,6 +67,12 @@ export const apiService = {
   api_docs_schema_retrieve,
   api_v1_login_create,
   api_v1_signup_create,
+  api_v1_user_list,
+  api_v1_user_create,
+  api_v1_user_retrieve,
+  api_v1_user_update,
+  api_v1_user_partial_update,
+  api_v1_user_destroy,
   rest_auth_login_create,
   rest_auth_logout_create,
   rest_auth_password_change_create,
